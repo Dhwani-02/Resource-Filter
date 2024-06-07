@@ -1,6 +1,7 @@
 <?php
+/****CUSTOM POST TYPE OF RESOURCE****/
 function custom_resource_post_type() {
-    // Custom post type labels
+
     $labels = array(
         'name'               => 'Resources',
         'singular_name'      => 'Resource',
@@ -10,7 +11,7 @@ function custom_resource_post_type() {
         'all_items'          => 'All Resources',
     );
 
-    // Custom post type arguments
+    /***ARGUMENTS***/
     $args = array(
         'labels'              => $labels,
         'public'              => true,
@@ -21,14 +22,15 @@ function custom_resource_post_type() {
         'supports'            => array('title', 'editor', 'thumbnail'),
     );
 
-    // Register custom post type
+    /**REQISTER POST TYPE***/
     register_post_type('resource', $args);
 }
 
-// Register custom post type
+/***REGISTER POST TYPE ACTION***/
 add_action('init', 'custom_resource_post_type');
 
-// Register custom taxonomy for resource types
+/***REGISTER POST TYPE TAXONOMIES RESOURCE TYPE***/
+
 function register_resource_type_taxonomy() {
     $labels = array(
         'name' => 'Resource Types',
@@ -54,7 +56,8 @@ function register_resource_type_taxonomy() {
 }
 add_action( 'init', 'register_resource_type_taxonomy' );
 
-// Register custom taxonomy for resource topics
+/***REGISTER POST TYPE TAXONOMIES RESOURCE TOPICS***/
+
 function register_resource_topic_taxonomy() {
     $labels = array(
         'name' => 'Resource Topics',

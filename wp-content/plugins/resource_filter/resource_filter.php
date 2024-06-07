@@ -7,7 +7,10 @@
  * Domain Path:       /languages
  */
 
-
+ if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly.
+}
+/**REQUIRE PATH FOR FUNCTIONS FILE***/
  require_once(__DIR__ . '/inc/functions.php');
 
 

@@ -222,13 +222,6 @@ add_filter('template_include', 'load_custom_page_template');
 
 
 
-// Enqueue the stylesheet on the archive page for the 'resource' post type
-function custom_resource_include() {
-    if (is_post_type_archive('resource')) {
-        wp_enqueue_style('resource-style', get_stylesheet_directory_uri() . '/resource.css', array(), '1.0', 'all');
-    }
-}
-add_action('wp_enqueue_scripts', 'custom_resource_include');
 
 
 
